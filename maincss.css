@@ -10,10 +10,11 @@
   align-items: center;
   justify-content: right;
   z-index: 2;
+
+  transition: 0.4s;
 }
 .titlehead {
   vertical-align: middle;
-  font-size: 2em;
   margin-top: 0;
   color: black;
   margin-left: 2vh;
@@ -147,7 +148,7 @@ body {
   border: 3px solid;
 }
 .gridImg {
-  width: 90%;
+  width: 100%;
   height: 90%;
   object-fit: cover;
   border: 3px solid;
@@ -215,7 +216,7 @@ body {
 }
 .overlay {
   position: absolute;
-  bottom: 1vh;
+  bottom: 0;
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.5); /* Black see-through */
   color: #f1f1f1;
@@ -230,8 +231,38 @@ body {
 }
 .container {
   height: 100%;
+  width: 21vw;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: right;
+}
+.videocenter {
+  width: 100%;
+  height: 30vw;
+  justify-content: center;
+  display: flex;
+}
+#video {
+  height: 100%;
+}
+video {
+  margin: 0 auto;
+
+  display: block;
+}
+#headervideo {
+  position: absolute;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 50%;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: right;
+}
+#headervideo:hover {
+  opacity: 1;
 }

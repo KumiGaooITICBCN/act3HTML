@@ -7,6 +7,10 @@
     <title>Document</title>
     <link
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <link rel="icon" type="image/png" href="/images/moth2.png" />
@@ -29,10 +33,32 @@
     <div id="container">
       <div id="capcelera">
         <h1 class="restaurante">Restaurante <b>Leblanc</b></h1>
+        <span id="star" style="color: white" class="material-symbols-outlined">
+          grade
+        </span>
         <p class="desc">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor
         </p>
+      </div>
+    </div>
+    <div class="videocenter">
+      <video id="video" muted loop id="video">
+        <source src="/img/Chinatown.mp4" type="video/mp4" />
+      </video>
+      <div id="headervideo">
+        <button style="display: none" id="play" onclick="myFunction()">
+          <span class="material-symbols-outlined"> play_circle </span>
+        </button>
+        <button id="pause" onclick="myFunction()">
+          <span class="material-symbols-outlined"> pause_circle </span>
+        </button>
+        <button style="display: none" id="volumeUp" onclick="unMute()">
+          <span class="material-symbols-outlined"> volume_up </span>
+        </button>
+        <button id="volumeMute" onclick="unMute()">
+          <span class="material-symbols-outlined"> volume_off </span>
+        </button>
       </div>
     </div>
     <div id="noCap">
@@ -192,8 +218,76 @@
       </div>
       <div class="foot">
         <i class="material-icons">account_box</i>
-        <p>Moi Díez Zhou</p>
+        <p>Lila Díez Zhou</p>
       </div>
     </div>
+    <script>
+      var video = document.getElementById("video");
+
+      var play = document.getElementById("play");
+
+      var volumeUp = document.getElementById("volumeUp");
+
+      var volumeMute = document.getElementById("volumeMute");
+
+      var pause = document.getElementById("pause");
+
+      var star = document.getElementById("star");
+
+      // Pause and play the video, and change the button text
+      function myFunction() {
+        if (video.paused) {
+          video.play();
+          pause.style.display = "initial";
+          play.style.display = "none";
+        } else {
+          video.pause();
+          pause.style.display = "none";
+          play.style.display = "initial";
+        }
+      }
+      function unMute() {
+        if (video.muted) {
+          video.muted = false;
+          volumeUp.style.display = "initial";
+          volumeMute.style.display = "none";
+        } else {
+          video.muted = true;
+          volumeUp.style.display = "none";
+          volumeMute.style.display = "initial";
+        }
+      }
+      function autoPlay() {
+        if (video.pause && video.muted) {
+          video.play();
+          pause.style.display = "initial";
+          play.style.display = "none";
+        }
+      }
+      window.onscroll = function () {
+        autoPlay();
+        scrollFunction();
+        Rotation();
+      };
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 90 ||
+          document.documentElement.scrollTop > 90
+        ) {
+          document.getElementById("header").style.padding = "20px 10px";
+
+          document.getElementById("header").style.fontSize = "20px";
+        } else {
+          document.getElementById("header").style.padding = "40px 10px";
+
+          document.getElementById("header").style.fontSize = "30px";
+        }
+      }
+
+      function Rotation() {
+        star.style.fontSize = window.pageYOffset / 2 + "px";
+        star.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
+      }
+    </script>
   </body>
 </html>
