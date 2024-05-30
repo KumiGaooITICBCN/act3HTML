@@ -221,6 +221,7 @@
         <p>Lila Díez Zhou</p>
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       var video = document.getElementById("video");
 
@@ -288,6 +289,13 @@
         star.style.fontSize = window.pageYOffset / 2 + "px";
         star.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
       }
+
+      $(document).ready(function () {
+        $(".enunciado").click(function () {
+          $("#pt1").slideToggle();
+          $("#pt2").slideToggle();
+        });
+      });
     </script>
   </body>
 </html>

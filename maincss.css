@@ -46,13 +46,20 @@ body {
   width: 55vw;
   align-items: center;
   justify-content: center;
+
+  animation-name: titol;
+  animation-duration: 4s;
 }
 .restaurante {
   font-size: 3em;
   color: white;
   font-weight: normal;
+  animation-name: titol;
+  animation-duration: 2.5s;
 }
 .desc {
+  animation-name: titol;
+  animation-duration: 2.5s;
   color: white;
   font-size: 2em;
 }
@@ -184,6 +191,9 @@ body {
   margin: 5px;
   border: 3px solid;
   display: flex;
+  overflow: hidden;
+
+  transition-duration: 0.4s;
 }
 .enunciado {
   font-size: 3em;
@@ -191,6 +201,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   margin-left: -1vw;
+  transition: 0.5s;
 }
 #footer {
   display: flex;
@@ -213,6 +224,10 @@ body {
 .galeryImg:hover {
   border: 5px solid green;
   filter: brightness(50%);
+  filter: none;
+  scale: 130%;
+  rotate: 10deg;
+  filter: grayscale(100%);
 }
 .overlay {
   position: absolute;
@@ -265,4 +280,25 @@ video {
 }
 #headervideo:hover {
   opacity: 1;
+}
+.enunciado:hover {
+  color: red;
+  rotate: 360deg;
+  background-image: url("img/oci1BbtJnIDUOAO0ZXT4tfA0fQEudCDBlEZtAF~tplv-tej9nj120t-origin\ \(1\).jpg");
+
+  background-position: center;
+}
+@keyframes titol {
+  0% {
+    color: orange;
+    top: 0%;
+    opacity: 0%;
+  }
+  65% {
+    color: orange;
+    opacity: 70%;
+  }
+  85% {
+    opacity: 90%;
+  }
 }
